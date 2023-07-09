@@ -8,10 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // ...
 
   // Store the credentials in the database (Example: using MySQLi)
-  $dbHost = 'your_database_host';
-  $dbName = 'your_database_name';
-  $dbUser = 'your_database_username';
-  $dbPass = 'your_database_password';
+  $dbHost = 'agforallof.us';
+  $dbName = 'sensorgarden';
+  $dbUser = 'plants';
+  $dbPass = 'watermePLEASE';
 
   $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
   if ($conn->connect_error) {
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 
   // Store the username and password in the users table
-  $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+  $sql = "INSERT INTO Users (email, password) VALUES ('$username', '$password')";
   if ($conn->query($sql) === true) {
     echo 'Registration successful!';
   } else {
