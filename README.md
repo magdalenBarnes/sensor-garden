@@ -6,13 +6,13 @@ The goal of this project is to produce a soil moisture logging system with both 
 
 # Hardware
 ## Supplies Used
--
--
--
-
-
+- [Songhe soil sensors](https://www.amazon.com/dp/B07SYBSHGX?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+- [Elegoo UNO Project Super Starter Kit](https://www.amazon.com/dp/B01D8KOZF4?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+- [ESP32](https://www.amazon.com/ESP-WROOM-32-Development-Dual-Mode-Microcontroller-Integrated/dp/B07WCG1PLV)
 
 ## Wiring Diagram
+
+## Communication Between the Elegoo and ESP32 Module
 
 # Data Management
 ## Data Model
