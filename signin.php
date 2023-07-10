@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $sql = "SELECT * FROM Users WHERE email = :username LIMIT 1";
   $stmt = $pdo->prepare($sql);
-  $stmt->bindParam(':username', $username);
+  $stmt->bindParam(':email', $username);
   $stmt->execute();
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
