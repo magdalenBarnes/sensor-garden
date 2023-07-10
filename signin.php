@@ -20,14 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $sql = "SELECT * FROM Users WHERE email = :email LIMIT 1";
   $stmt = $pdo->prepare($sql);
-  $stmt->bindParam(':email', $username);
+  $stmt->bindParam(':email', $email);
   $stmt->execute();
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
   if ($user) {
     if (password_verify($password, $user['password'])) {
       // Valid credentials, the user is authenticated
-      $_SESSION['email'] = $username;
+      $_SESSION['email'] = $email;
       header("Location: dashboard.html"); // Redirect to the dashboard page
       exit;
     } else {
