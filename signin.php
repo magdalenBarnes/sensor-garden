@@ -15,19 +15,19 @@ try {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $username = $_POST['email'];
+  $username = $_POST['username'];
   $password = $_POST['password'];
 
-  $sql = "SELECT * FROM Users WHERE email = :email LIMIT 1";
+  $sql = "SELECT * FROM Users WHERE email = :username LIMIT 1";
   $stmt = $pdo->prepare($sql);
-  $stmt->bindParam(':email', $email);
+  $stmt->bindParam(':username', $username);
   $stmt->execute();
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
   if ($user) {
     if (password_verify($password, $user['password'])) {
       // Valid credentials, the user is authenticated
-      $_SESSION['email'] = $email;
+      $_SESSION['username'] = $username;
       header("Location: dashboard.html"); // Redirect to the dashboard page
       exit;
     } else {
