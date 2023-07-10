@@ -15,31 +15,31 @@ try {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $username = $_POST['username'];
+  $username = $_POST['email'];
   $password = $_POST['password'];
 
-  $sql = "SELECT * FROM Users WHERE username = :username LIMIT 1";
+  $sql = "SELECT * FROM Users WHERE email = :email LIMIT 1";
   $stmt = $pdo->prepare($sql);
-  $stmt->bindParam(':username', $username);
+  $stmt->bindParam(':email', $username);
   $stmt->execute();
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
   if ($user) {
     if (password_verify($password, $user['password'])) {
       // Valid credentials, the user is authenticated
-      $_SESSION['username'] = $username;
+      $_SESSION['email'] = $username;
       header("Location: dashboard.html"); // Redirect to the dashboard page
       exit;
     } else {
       // Invalid password
       echo "Invalid username or password.";
-      header("Location: index.html"); // Redirect to the login page
+        header("Location: index.html"); // Redirect to the login page
       exit;
     }
   } else {
     // User not found
     echo "User not found. Invalid username or password.";
-    header("Location: index.html"); // Redirect to the login page
+      header("Location: index.html"); // Redirect to the login page
       exit;
   }
 }
