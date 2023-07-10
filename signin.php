@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $username = $_POST['username'];
   $password = $_POST['password'];
 
-  $sql = "SELECT * FROM Users WHERE email = :username LIMIT 1";
+  $sql = "SELECT * FROM Users WHERE username = :username LIMIT 1";
   $stmt = $pdo->prepare($sql);
   $stmt->bindParam(':username', $username);
   $stmt->execute();
