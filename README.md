@@ -17,8 +17,11 @@ To facilitate communication between the Elegoo UNO and the ESP32, serial communi
 
 1. The Elegoo UNO's RX port (pin 1) was connected to the TX2 port (pin 17) on the ESP32.
 2. A ground port on the Elegoo UNO was connected to a grount port on the ESP32.
-3. The Elegoos UNO's TX port (pin 2) was connected to the RX2 port (pin 16) on the ESP 32. NOTE: The UNO outputs 5V, however the ESP32 can only recive 3.3V. Because of this, a voltage divider was created using the breadboard attached to the UNO, a 220 ohm resistor, an 100 ohm resistor, and a 330 ohm resistor to reduce the voltage from 5V to 3.3V.Refer to the wiring diagram for more information on setting up the circuit.
-5. To test the communication between the two devices, source code from [Programmingboss.com](https://www.programmingboss.com/2021/04/esp32-arduino-serial-communication-with-code.html#gsc.tab=0) was used.
+3. The Elegoos UNO's TX port (pin 2) was connected to the RX2 port (pin 16) on the ESP 32.
+
+NOTE: The UNO outputs 5V, however the ESP32 can only recive 3.3V. Because of this, a voltage divider was created using the breadboard attached to the UNO, a 220 ohm resistor, an 100 ohm resistor, and a 330 ohm resistor to reduce the voltage from 5V to 3.3V.Refer to the wiring diagram for more information on setting up the circuit.
+
+6. To test the communication between the two devices, source code from [Programmingboss.com](https://www.programmingboss.com/2021/04/esp32-arduino-serial-communication-with-code.html#gsc.tab=0) was used.
 ```c
 // this sample code provided by www.programmingboss.com
 void setup() {
